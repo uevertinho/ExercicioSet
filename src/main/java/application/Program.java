@@ -13,6 +13,7 @@ import java.util.Set;
 
 public class Program {
     public static void main(String[] args) {
+
         Scanner sc = new Scanner(System.in);
 
         System.out.print("Enter file full path: ");
@@ -20,6 +21,11 @@ public class Program {
 
         try (BufferedReader br = new BufferedReader(new FileReader(path))) {
 
+            /* Macete de usar a estrutura Set:
+               Como ele não aceita repetição, sempre que lemos um usuário que já existe
+               e tentamos inserir no conjunto, a inserção é barrada
+               e no final só tem uma ocorrência de cada usuário
+            */
             Set<LogEntry> set = new HashSet<>();
 
             String line = br.readLine();
